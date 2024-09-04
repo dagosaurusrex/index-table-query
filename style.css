@@ -10,3 +10,11 @@ p {
     font-size: 18px;
     font-weight: normal;
 }
+
+input {
+    margin: 20px;
+}
+
+div {
+    font-size: 24px;
+}
