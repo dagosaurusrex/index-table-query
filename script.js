@@ -56,14 +56,14 @@ function startRound(userSelection) {
     || (userSelection == 'QUERY' && compSelection == 'INDEX')
     || (userSelection == 'INDEX' && compSelection == 'TABLE')) {
         alert("You won this round!");
-        advanceRound();/*roundWon();  I'll add this back in after I create the roundWon() function */
+        roundWon();  /*I'll add this back in after I create the roundWon() function */
     } else {
         alert("Oop! I won this round. Better luck next time!");
         advanceRound();/*roundLost();  I'll add this back in after I create the roundLost() function*/
     }
 }
 
-/*After a round has started and completed, the round is over and we need to advance to the next round*/
+/*After a round has taken place and the round is over and we need to advance to the next round*/
 function advanceRound() {
     currentRound += 1;
     /*if (currentRound>5) {
@@ -71,4 +71,10 @@ function advanceRound() {
     }
 
     commenting this part out until we create the checkWinner ()*/
+}
+
+/*When a user wins or loses a round*/
+function roundWon() {
+    userWins += 1;
+    advanceRound();
 }
