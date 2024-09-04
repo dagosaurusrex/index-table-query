@@ -85,13 +85,21 @@ function roundLost() {
 /*Check for a winner after 5 rounds are done!*/
 function checkWinner() {
     if (userWins > compWins) {
-        alert("You won!");
-        /*endGame(); leaving this out until we build the endGame function*/
+        alert("Oh nice! You won the game!");
+        endGame();
     } else if (userWins < compWins) {
         alert("Oof. You lost...")
-        /*endGame(); leaving this out until we build the endGame function*/
+        endGame();
     } else {
         alert("Great minds think alike! We tied!");
-        /*endGame(); leaving this out until we build the endGame function*/
+        endGame();
     }
+}
+
+/*After 5 rounds have been completed, the game needs to end, current round, user wins and computer wins will all be reset so another game can be played*/
+function endGame() {
+    currentRound = 1;
+    userWins = 0;
+    compWins = 0;
+    alert("Let's play again!");
 }
