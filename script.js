@@ -51,15 +51,15 @@ function startRound(userSelection) {
     /*this determines the round winner*/
     if (compSelection == userSelection) {
         alert("Tie!");
-        advanceRound(); /* I'll add this back in after I create the advanceRound function*/
+        advanceRound();
     } else if ((userSelection == 'TABLE' && compSelection == 'QUERY')
     || (userSelection == 'QUERY' && compSelection == 'INDEX')
     || (userSelection == 'INDEX' && compSelection == 'TABLE')) {
         alert("You won this round!");
-        roundWon();  /*I'll add this back in after I create the roundWon() function */
+        roundWon();
     } else {
         alert("Oop! I won this round. Better luck next time!");
-        roundLost();  /*I'll add this back in after I create the roundLost() function*/
+        roundLost(); 
     }
 }
 
