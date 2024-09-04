@@ -23,16 +23,32 @@ document.getElementById('query').addEventListener('click', function() {
 
 function handleButtonClick(buttonValue) {
     let myVariable = buttonValue;
-    console.log('Button clicked ', myVariable);
-    runMyFunction(myVariable); 
+    console.log('User\'s selection: ', myVariable);
+    runMyFunction(myVariable);
 }
 
 function runMyFunction(value) {
     alert("You clicked " + value);
 }
 
+
+/*Play a round*/
+function getCompSelection () {
+    let compSelection = Math.floor((Math.random()*3));
+    if (compSelection == 0) {
+        return 'INDEX';
+    } else if (compSelection == 1) {
+        return 'TABLE';
+    } else {
+        return 'QUERY';
+    }
+}
+
 function startRound(buttonValue) {
-    let compSelection = 'TABLE';
+    let compSelection = getCompSelection ();
+    console.log(compSelection);
+
+    /*this determines the round winner*/
     if (compSelection == buttonValue) {
         alert("Tie!");
         /*advanceRound();  I'll add this back in after I create the advanceRound function*/
