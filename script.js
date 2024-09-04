@@ -59,22 +59,36 @@ function startRound(userSelection) {
         roundWon();  /*I'll add this back in after I create the roundWon() function */
     } else {
         alert("Oop! I won this round. Better luck next time!");
-        advanceRound();/*roundLost();  I'll add this back in after I create the roundLost() function*/
+        roundLost();  /*I'll add this back in after I create the roundLost() function*/
     }
 }
 
 /*After a round has taken place and the round is over and we need to advance to the next round*/
 function advanceRound() {
     currentRound += 1;
-    /*if (currentRound>5) {
+    if (currentRound>5) {
         checkWinner();
     }
-
-    commenting this part out until we create the checkWinner ()*/
 }
 
 /*When a user wins or loses a round*/
 function roundWon() {
     userWins += 1;
     advanceRound();
+}
+
+function roundLost() {
+    compWins += 1;
+    advanceRound();
+}
+
+/*Check for a winner after 5 rounds are done!*/
+function checkWinner() {
+    if (userWins > compWins) {
+        alert("You won!");
+        /*endGame(); leaving this out until we build the endGame function*/
+    } else if (userWins < compWins) {
+        alert("Oof. You lost...")
+        /*endGame(); leaving this out until we build the endGame function*/
+    }
 }
