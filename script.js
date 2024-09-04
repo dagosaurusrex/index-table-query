@@ -21,8 +21,8 @@ document.getElementById('query').addEventListener('click', function() {
     startRound("QUERY");
 });
 
-function handleButtonClick(buttonValue) {
-    let myVariable = buttonValue;
+function handleButtonClick(userSelection) {
+    let myVariable = userSelection;
     console.log('User\'s selection: ', myVariable);
     runMyFunction(myVariable);
 }
@@ -44,21 +44,31 @@ function getCompSelection () {
     }
 }
 
-function startRound(buttonValue) {
+function startRound(userSelection) {
     let compSelection = getCompSelection ();
-    console.log(compSelection);
+    console.log("Computer\'s selection: " + compSelection);
 
     /*this determines the round winner*/
-    if (compSelection == buttonValue) {
+    if (compSelection == userSelection) {
         alert("Tie!");
-        /*advanceRound();  I'll add this back in after I create the advanceRound function*/
-    } else if ((buttonValue == 'TABLE' && compSelection == 'QUERY')
-    || (buttonValue == 'QUERY' && compSelection == 'INDEX')
-    || (buttonValue == 'INDEX' && compSelection == 'TABLE')) {
+        advanceRound(); /* I'll add this back in after I create the advanceRound function*/
+    } else if ((userSelection == 'TABLE' && compSelection == 'QUERY')
+    || (userSelection == 'QUERY' && compSelection == 'INDEX')
+    || (userSelection == 'INDEX' && compSelection == 'TABLE')) {
         alert("You won this round!");
-        /*roundWon();  I'll add this back in after I create the roundWon() function */
+        advanceRound();/*roundWon();  I'll add this back in after I create the roundWon() function */
     } else {
         alert("Oop! I won this round. Better luck next time!");
-        /*roundLost();  I'll add this back in after I create the roundLost() function*/
+        advanceRound();/*roundLost();  I'll add this back in after I create the roundLost() function*/
     }
+}
+
+/*After a round has started and completed, the round is over and we need to advance to the next round*/
+function advanceRound() {
+    currentRound += 1;
+    /*if (currentRound>5) {
+        checkWinner();
+    }
+
+    commenting this part out until we create the checkWinner ()*/
 }
