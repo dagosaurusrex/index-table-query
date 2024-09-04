@@ -31,6 +31,11 @@ function runMyFunction(value) {
     alert("You clicked " + value);
 }
 
+function updateRoundInfo() {
+    document.getElementById('userWins').innerText = userWins;
+    document.getElementById('currentRound').innerText = currentRound;
+}
+
 
 /*Play a round*/
 function getCompSelection () {
@@ -66,6 +71,7 @@ function startRound(userSelection) {
 /*After a round has taken place and the round is over and we need to advance to the next round*/
 function advanceRound() {
     currentRound += 1;
+    updateRoundInfo();
     if (currentRound>5) {
         checkWinner();
     }
@@ -102,4 +108,5 @@ function endGame() {
     userWins = 0;
     compWins = 0;
     alert("Let's play again!");
+    updateRoundInfo();
 }
