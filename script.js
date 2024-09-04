@@ -90,5 +90,8 @@ function checkWinner() {
     } else if (userWins < compWins) {
         alert("Oof. You lost...")
         /*endGame(); leaving this out until we build the endGame function*/
+    } else {
+        alert("Great minds think alike! We tied!");
+        /*endGame(); leaving this out until we build the endGame function*/
     }
 }
