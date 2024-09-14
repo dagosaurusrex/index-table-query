@@ -72,7 +72,7 @@ function startRound(userSelection) {
 function advanceRound() {
     currentRound += 1;
     updateRoundInfo();
-    if (currentRound>5) {
+    if ((userWins==5) || (compWins==5)) {
         checkWinner();
     }
 }
